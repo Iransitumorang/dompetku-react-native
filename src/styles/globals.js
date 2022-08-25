@@ -3,8 +3,7 @@ import {Dimensions, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     wrapper: {
-        // flex: 1,
-        backgroundColor: 'green',
+        backgroundColor: '#CA955C',
     },
     header: {
         height: Dimensions.get('screen').height / 4,
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 45,
         borderTopRightRadius: 45,
         flex: 1,
-        backgroundColor: 'skyblue',
+        backgroundColor: '#EDDFB3',
     },
     content: {
         flex: 1,
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
         marginBottom: 50,
     },
     buttonLogin: {
-        backgroundColor: 'green',
+        backgroundColor: '#CA955C',
         // width: Dimensions.get('screen').width / 2,
         marginHorizontal: 10,
         marginVertical: 30,
