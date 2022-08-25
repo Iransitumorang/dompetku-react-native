@@ -3,12 +3,12 @@ import {Dimensions, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     wrapper: {
-        flex: 1,
-        backgroundColor: 'skyblue',
+        // flex: 1,
+        backgroundColor: 'green',
     },
     header: {
-        height: Dimensions.get('screen').width / 3,
-        backgroundColor: 'green',
+        height: Dimensions.get('screen').height / 4,
+        // backgroundColor: 'green',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -16,9 +16,13 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
     },
-    content: {
+    article: {
         borderTopLeftRadius: 45,
         borderTopRightRadius: 45,
+        flex: 1,
+        backgroundColor: 'skyblue',
+    },
+    content: {
         flex: 1,
         paddingHorizontal: 10,
     },
@@ -26,13 +30,37 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 24,
         fontWeight: 'bold',
-        marginVertical: 20,
+        marginVertical: 30,
     },
     mainFont2: {
-        fontWeight: 'bold',
+        fontWeight: '500',
+        lineHeight: 25,
         textAlign: 'center',
         fontSize: 18,
-        marginBottom: 30,
+        marginBottom: 50,
+    },
+    buttonLogin: {
+        backgroundColor: 'green',
+        // width: Dimensions.get('screen').width / 2,
+        marginHorizontal: 10,
+        marginVertical: 30,
+        borderRadius: 10,
+    },
+    btnLoginText: {
+        fontSize: 18,
+        paddingVertical: 12,
+        textAlign: 'center',
+        fontWeight: '700',
+    },
+    forgotPass: {
+        textAlign: 'right',
+        marginHorizontal: 18,
+        fontSize: 16,
+    },
+    haveAccount: {
+        textAlign: 'center',
+        fontSize: 16,
+        paddingBottom: 150,
     },
 });
 

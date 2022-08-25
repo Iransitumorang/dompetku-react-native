@@ -22,6 +22,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         elevation: 3,
         borderRadius: 10,
+        flexDirection: 'row',
+        height: 50,
+    },
+    iconWrapper: {
+      // height: 50,
+      width: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
 });
 
