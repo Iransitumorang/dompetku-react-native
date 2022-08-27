@@ -39,7 +39,7 @@ const ChangePassword = () => {
           </View>
 
         <TouchableOpacity style={styles.buttonLogin} onPress={onLogin} >
-          <Text style={styles.btnLoginText}>ChangePassword</Text>
+          <Text style={styles.btnLoginText}>Change Password</Text>
         </TouchableOpacity>
         </View>
     </ScrollView>

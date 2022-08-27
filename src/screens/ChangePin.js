@@ -5,7 +5,7 @@ import { View, Text, ScrollView, TouchableOpacity, SmoothPinCodeInput } from 're
 import React from 'react';
 import styles from '../styles/globals';
 
-const PinBlank = () => {
+const ChangePin = () => {
   return (
     <ScrollView style={styles.wrapper}>
         <View style={styles.header}>
@@ -33,4 +33,4 @@ const PinBlank = () => {
   );
 };
 
-export default PinBlank;
+export default ChangePin;

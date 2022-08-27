@@ -34,7 +34,7 @@ const styleLocal = StyleSheet.create({
       marginTop: 50,
       alignItems: 'center',
       backgroundColor: 'green',
-      marginHorizontal: 145,
+      marginHorizontal: 156,
       borderRadius: 70,
       height: 100,
       padding: 10,
