@@ -19,12 +19,12 @@ const ChangePassword = () => {
     }
   };
   return (
-    <ScrollView style={styles.wrapper}>
+    <ScrollView>
         <View style={styleLocal.header}>
             <Icon name="arrow-left" size={20} color="black" />
             <Text style={styleLocal.headerFont}>Change Password</Text>
         </View>
-        <View style={styles.article}>
+        <View>
           <View  style={styles.content}>
             <Text style={styleLocal.mainFont2}>You must enter your current password and then type your new password twice.</Text>
             <View  style={styleLocal.inputWrapper}>
@@ -49,9 +49,12 @@ const ChangePassword = () => {
 const styleLocal = StyleSheet.create({
     header: {
         flexDirection: 'row',
-        marginVertical: 45,
         alignItems: 'center',
-        marginLeft: 20,
+        paddingLeft: 20,
+        backgroundColor: '#CA955C',
+        paddingVertical: 45,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
     },
     headerFont: {
         fontSize: 25,

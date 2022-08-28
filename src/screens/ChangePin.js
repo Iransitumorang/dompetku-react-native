@@ -16,14 +16,13 @@ const ChangePin = () => {
             <Text style={styles.mainFont1}>Create Security PIN</Text>
             <Text style={styles.mainFont2}>Create a PIN that’s contain 6 digits number for {'\n'} security purpose in Zwallet.</Text>
           </View>
-
-          <SmoothPinCodeInput
+          {/* <SmoothPinCodeInput
             ref={this.pinInput}
-            // value={code}
+            value={code}
             onTextChange={code => this.setState({ code })}
             onFulfill={this._checkCode}
             onBackspace={this._focusePrevInput}
-            />
+            /> */}
 
         <TouchableOpacity style={styles.buttonLogin} >
           <Text style={styles.btnLoginText}>Confirm</Text>

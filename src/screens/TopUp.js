@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import {View, Text, ScrollView, StyleSheet} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -15,11 +18,54 @@ const TopUp = () => {
           />
           <Text style={styleLocal.transText}>Top Up</Text>
         </View>
-        <View style={styleLocal.suhi}>
-          <View>
-            <Text style={styleLocal.samuel}>Samuel Suhi</Text>
-            <Text style={styleLocal.number}>+62 813-8492-9994</Text>
+        <View style={styleLocal.headerAct}>
+          <View style={styleLocal.iconPlusView}>
+            <Icon
+              style={styleLocal.iconplus}
+              name="plus"
+              size={40}
+              color="black"
+            />
           </View>
+          <View>
+            <Text style={styleLocal.virtual}>Virtual Account Number</Text>
+            <Text style={styleLocal.number}>2389 081393877946</Text>
+          </View>
+        </View>
+      </View>
+      <Text style={styleLocal.howto}>How to Top-Up</Text>
+      <View style={{marginHorizontal: 20}}>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>1</Text>
+          <Text style={styleLocal.description}>Go to the nearest ATM or you can use E-Banking.</Text>
+        </View>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>2</Text>
+          <Text style={styleLocal.description}>Type your security number on the ATM or E-Banking.</Text>
+        </View>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>3</Text>
+          <Text style={styleLocal.description}>Select “Transfer” in the menu</Text>
+        </View>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>4</Text>
+          <Text style={styleLocal.description}>Type the virtual account number that we provide you at the top.</Text>
+        </View>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>5</Text>
+          <Text style={styleLocal.description}>Type the amount of the money you want to top up.</Text>
+        </View>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>6</Text>
+          <Text style={styleLocal.description}>Read the summary details</Text>
+        </View>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>7</Text>
+          <Text style={styleLocal.description}>Press transfer / top up</Text>
+        </View>
+        <View style={styleLocal.descGroup}>
+          <Text style={styleLocal.listNumber}>8</Text>
+          <Text style={styleLocal.description}>You can see your money in Zwallet within 3 hours.</Text>
         </View>
       </View>
     </ScrollView>
@@ -34,7 +80,7 @@ const styleLocal = StyleSheet.create({
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
   },
-  suhi: {
+  headerAct: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
@@ -48,7 +94,18 @@ const styleLocal = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 25,
   },
-  samuel: {
+  iconPlusView: {
+    backgroundColor: '#EBEEF2',
+    width: 50,
+    height: 50,
+    borderRadius: 10,
+    marginRight: 15,
+  },
+  iconplus: {
+    textAlign: 'center',
+    marginTop: 5,
+  },
+  virtual: {
     fontSize: 20,
     fontWeight: '700',
     marginBottom: 5,
@@ -63,41 +120,34 @@ const styleLocal = StyleSheet.create({
   transIcon: {
     marginRight: 10,
   },
-  mainGroup: {
-    backgroundColor: 'white',
-    elevation: 2,
-    width: 170,
-    height: 80,
-    paddingLeft: 17,
-    borderRadius: 15,
-  },
-  titleMain: {
-    fontSize: 16,
-    fontWeight: '400',
-    marginVertical: 10,
-  },
-  amountMain: {
+  howto: {
+    marginLeft: 20,
     fontSize: 18,
     fontWeight: '700',
+    marginVertical: 35,
   },
-  notesGroup: {
+  descGroup: {
+    flexDirection: 'row',
+    marginRight: 20,
+    alignItems: 'center',
+    marginBottom: 25,
     backgroundColor: 'white',
-    elevation: 2,
+    borderRadius: 15,
+    height: 75,
     paddingLeft: 15,
-    height: 80,
-    borderRadius: 15,
+    elevation: 2,
   },
-  continueBtn: {
-    marginVertical: 80,
-    backgroundColor: 'skyblue',
-    height: 60,
-    borderRadius: 20,
-  },
-  continueText: {
+  listNumber: {
     fontSize: 18,
     fontWeight: '700',
-    textAlign: 'center',
-    paddingTop: 18,
+    marginRight: 15,
+  },
+  description: {
+    fontWeight: '400',
+    fontSize: 16,
+    lineHeight: 27,
+    background: '#7A7886',
+    paddingRight: 25,
   },
 });
 

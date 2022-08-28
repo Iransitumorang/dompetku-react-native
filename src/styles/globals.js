@@ -55,6 +55,8 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         marginHorizontal: 18,
         fontSize: 16,
+        color: '#61481C',
+        borderBottomColor: '#61481C',
     },
     haveAccount: {
         textAlign: 'center',

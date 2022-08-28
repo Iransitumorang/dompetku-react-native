@@ -2,18 +2,20 @@
 /* eslint-disable eol-last */
 /* eslint-disable prettier/prettier */
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import React from 'react';
+import * as React from 'react';
 import styles from '../styles/globals';
 import Input from '../components/Input';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const onLogin = () => {
-    if (email === 'admin@mail.com' && password === 'admin'){
-      Alert.alert('Succes', 'Login Success');
+  const onLogin = () =>  {
+    if (email === 'tes@mail.com' && password === '12345'){
+      // Alert.alert('Succes', 'Login Success');
     } else {
-      Alert.alert('Failed', 'Login Failed');
+      Alert.alert('Failed', 'Input the right account');
     }
   };
   return (
@@ -25,7 +27,7 @@ const Login = () => {
           <View  style={styles.content}>
             <Text style={styles.mainFont1}>Login</Text>
             <Text style={styles.mainFont2}>Login to your existing account to access {'\n'}
-                  all the features in Zwallet.</Text>
+                  all the features in Dompetku.</Text>
             <View  style={styleLocal.inputWrapper}>
               <Input onChange={text => setEmail(text)} placeholder="Enter your e-mail" icon="envelope" type="email-address"/>
             </View>
@@ -33,12 +35,11 @@ const Login = () => {
               <Input onChange={text => setPassword(text)} placeholder="Enter your password" icon="lock" secure={true} />
             </View>
           </View>
-        <Text style={styles.forgotPass}>Forgot password?</Text>
-
-        <TouchableOpacity style={styles.buttonLogin} onPress={onLogin} >
+        <Text style={styles.forgotPass} onPress={() => navigation.navigate('ForgotPassword')}>Forgot password?</Text>
+        <TouchableOpacity style={styles.buttonLogin} onPress={onLogin}  >
           <Text style={styles.btnLoginText}>Login</Text>
         </TouchableOpacity>
-        <Text style={styles.haveAccount}>Don’t have an account? Let’s Sign Up</Text>
+        <Text style={styles.haveAccount}>Don’t have an account? Let’s <TouchableOpacity style={styleLocal.buttonSignup} onPress={() => navigation.navigate('Signup')}><Text style={styleLocal.textSignup}> Sign Up</Text></TouchableOpacity></Text>
         </View>
     </ScrollView>
   );
@@ -50,6 +51,11 @@ const styleLocal = StyleSheet.create({
   },
   flex: {
     flex: 1,
+  },
+  textSignup: {
+    fontWeight: '700',
+    fontSize: 15,
+    color: '#61481C',
   },
 });
 
