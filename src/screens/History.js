@@ -6,13 +6,15 @@
 import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { PRIMARY_COLOR } from '../styles/constant';
+import { SECONDARY_COLOR } from '../styles/constant';
 
-const History = () => {
+const History = ({ navigation }) => {
   return (
     <ScrollView>
         <View style={styleLocal.header}>
             <View style={styleLocal.headerTrans}>
-                <Icon style={styleLocal.transIcon} name="arrow-back" size={37} color="black" />
+                <Icon onPress={() => navigation.navigate('Profile')} style={styleLocal.transIcon} name="arrow-back" size={37} color="black" />
                 <Text style={styleLocal.transText}>History</Text>
             </View>
         </View>
@@ -107,7 +109,7 @@ const History = () => {
 
 const styleLocal = StyleSheet.create({
     header: {
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         paddingVertical: 35,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 25,
@@ -136,7 +138,7 @@ const styleLocal = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 15,
         marginBottom: 15,
-        backgroundColor: 'skyblue',
+        backgroundColor: SECONDARY_COLOR,
         alignItems: 'center',
         elevation: 3,
     },
@@ -174,25 +176,25 @@ const styleLocal = StyleSheet.create({
         flexDirection: 'row',
     },
     actionBottomChild: {
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         width: 60,
         height: 55,
         textAlign: 'center',
-        paddingTop: 8,
+        paddingTop: 9,
         borderRadius: 20,
     },
     abc2: {
         marginHorizontal: 20,
     },
     actionBottomChild3: {
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         width: 180,
         height: 55,
         fontSize: 18,
         fontWeight: '700',
         borderRadius: 20,
         textAlign: 'center',
-        paddingTop: 13,
+        paddingTop: 15,
     },
 });
 

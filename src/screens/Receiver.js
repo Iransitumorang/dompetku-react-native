@@ -3,16 +3,18 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable eol-last */
 /* eslint-disable prettier/prettier */
-import { View, Text, ScrollView, StyleSheet, Image, TextInput } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { PRIMARY_COLOR } from '../styles/constant';
+import { SECONDARY_COLOR } from '../styles/constant';
 
-const Receiver = () => {
+const Receiver = ({ navigation }) => {
   return (
     <ScrollView>
         <View style={styleLocal.header}>
             <View style={styleLocal.headerTrans}>
-                <Icon style={styleLocal.transIcon} name="arrow-back" size={37} color="black" />
+                <Icon onPress={() => navigation.goBack()} style={styleLocal.transIcon} name="arrow-back" size={37} color="black" />
                 <Text style={styleLocal.transText}>Find Receiver</Text>
             </View>
             <View  style={styleLocal.searchBar}>
@@ -25,7 +27,7 @@ const Receiver = () => {
            <Text style={styleLocal.founds}>17 Contact Founds</Text>
         </View>
         <View>
-            <View style={styleLocal.userTrans}>
+            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.userTrans}>
                 <View style={styleLocal.imgName}>
                     <Image
                         source={require('../assets/images/sam-suhi.jpg')} style={{width: 62, height: 62, marginRight: 20}}
@@ -37,8 +39,8 @@ const Receiver = () => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styleLocal.userTrans}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.userTrans}>
                 <View style={styleLocal.imgName}>
                     <Image
                         source={require('../assets/images/sam-suhi.jpg')} style={{width: 62, height: 62, marginRight: 20}}
@@ -50,8 +52,8 @@ const Receiver = () => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styleLocal.userTrans}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.userTrans}>
                 <View style={styleLocal.imgName}>
                     <Image
                         source={require('../assets/images/sam-suhi.jpg')} style={{width: 62, height: 62, marginRight: 20}}
@@ -63,8 +65,8 @@ const Receiver = () => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styleLocal.userTrans}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.userTrans}>
                 <View style={styleLocal.imgName}>
                     <Image
                         source={require('../assets/images/sam-suhi.jpg')} style={{width: 62, height: 62, marginRight: 20}}
@@ -76,8 +78,8 @@ const Receiver = () => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styleLocal.userTrans}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.userTrans}>
                 <View style={styleLocal.imgName}>
                     <Image
                         source={require('../assets/images/sam-suhi.jpg')} style={{width: 62, height: 62, marginRight: 20}}
@@ -89,8 +91,8 @@ const Receiver = () => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styleLocal.userTrans}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.userTrans}>
                 <View style={styleLocal.imgName}>
                     <Image
                         source={require('../assets/images/sam-suhi.jpg')} style={{width: 62, height: 62, marginRight: 20}}
@@ -102,7 +104,7 @@ const Receiver = () => {
                         </View>
                     </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         </View>
     </ScrollView>
   );
@@ -111,13 +113,13 @@ const Receiver = () => {
 const styleLocal = StyleSheet.create({
     searchBar: {
         flexDirection: 'row',
-        backgroundColor: 'white',
+        backgroundColor: SECONDARY_COLOR,
         height: 60,
         borderRadius: 20,
         alignItems: 'center',
     },
     header: {
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         paddingVertical: 45,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 25,
@@ -128,10 +130,6 @@ const styleLocal = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 25,
     },
-    // transDesc: {
-    //     justifyContent: 'space-between',
-    //     marginVertical: 50,
-    // },
     transText: {
         fontSize: 22,
         fontWeight: '700',
@@ -150,19 +148,13 @@ const styleLocal = StyleSheet.create({
     founds: {
         marginLeft: 25,
     },
-    // mainTop: {
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //     paddingHorizontal: 25,
-    //     paddingVertical: 25,
-    // },
     userTrans: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 20,
         paddingVertical: 15,
         marginBottom: 15,
-        backgroundColor: 'skyblue',
+        backgroundColor: SECONDARY_COLOR,
         alignItems: 'center',
         elevation: 3,
     },
@@ -175,12 +167,6 @@ const styleLocal = StyleSheet.create({
         fontSize: 20,
         fontWeight: '700',
     },
-    // minusAmount: {
-    //     color: 'red',
-    // },
-    // plusAmount: {
-    //     color: 'green',
-    // },
     desc: {
         marginTop: 8,
         fontSize: 17,

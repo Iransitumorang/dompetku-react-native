@@ -3,28 +3,32 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable eol-last */
 /* eslint-disable prettier/prettier */
-import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { PRIMARY_COLOR } from '../styles/constant';
+import { SECONDARY_COLOR } from '../styles/constant';
+import { MINUS_AMOUNT } from '../styles/constant';
+import { PLUS_AMOUNT } from '../styles/constant';
 
-const TransactionDetail = () => {
+const TransactionDetail = ({ navigation }) => {
   return (
     <ScrollView>
         <View style={styleLocal.header}>
             <View style={styleLocal.headerTrans}>
-                <Icon style={styleLocal.transIcon} name="arrow-back" size={37} color="black" />
+                <Icon onPress={() => navigation.goBack()} style={styleLocal.transIcon} name="arrow-back" size={37} color="black" />
                 <Text style={styleLocal.transText}>Transaction</Text>
             </View>
             <View style={[styleLocal.headerTrans, styleLocal.transDesc]}>
-                <View style={styleLocal.headerTrans}>
-                    <Icon style={styleLocal.transIcon} name="arrow-down" size={37} color="green" />
+                <View style={styleLocal.headerTrans2}>
+                    <Icon style={styleLocal.transIcon} name="arrow-down" size={37} color={PLUS_AMOUNT} />
                     <View>
                         <Text>Income</Text>
                         <Text style={styleLocal.transText}>Rp 2.120.000</Text>
                     </View>
                 </View>
-                <View stayle={styleLocal.headerTrans}>
-                    <Icon style={styleLocal.transIcon} name="arrow-up" size={37} color="crimson" />
+                <View stayle={styleLocal.headerTrans2}>
+                    <Icon style={styleLocal.transIcon} name="arrow-up" size={37} color={MINUS_AMOUNT} />
                     <View>
                         <Text>Expense</Text>
                         <Text style={styleLocal.transText}>Rp 1.560.000</Text>
@@ -39,7 +43,9 @@ const TransactionDetail = () => {
         </View>
         <View style={styleLocal.mainTop}>
             <Text style={styleLocal.amount}>Transaction History</Text>
-            <Text style={styleLocal.seeall}>See all</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('History')}>
+                <Text style={styleLocal.seeall}>See all</Text>
+            </TouchableOpacity>
         </View>
         <View>
             <View style={styleLocal.userTrans}>
@@ -119,7 +125,7 @@ const TransactionDetail = () => {
 
 const styleLocal = StyleSheet.create({
     header: {
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         paddingTop: 35,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 25,
@@ -158,7 +164,7 @@ const styleLocal = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 15,
         marginBottom: 15,
-        backgroundColor: 'skyblue',
+        backgroundColor: SECONDARY_COLOR,
         alignItems: 'center',
         elevation: 3,
     },
@@ -172,14 +178,14 @@ const styleLocal = StyleSheet.create({
         fontWeight: '700',
     },
     minusAmount: {
-        color: 'red',
+        color: MINUS_AMOUNT,
     },
     plusAmount: {
-        color: 'green',
+        color: PLUS_AMOUNT,
     },
     seeall: {
         fontSize: 20,
-        color: 'red',
+        color: MINUS_AMOUNT,
         alignItems: 'center',
     },
     desc: {

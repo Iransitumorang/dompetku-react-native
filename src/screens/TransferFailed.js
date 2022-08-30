@@ -6,8 +6,11 @@
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
+import { PRIMARY_COLOR } from '../styles/constant';
+import { SECONDARY_COLOR } from '../styles/constant';
+import { MINUS_AMOUNT } from '../styles/constant';
 
-const TransferFailed = () => {
+const TransferFailed = ({ navigation }) => {
   return (
     <ScrollView>
         <View style={styleLocal.header}>
@@ -67,7 +70,7 @@ const TransferFailed = () => {
                     <Text style={styleLocal.number}>+62 813-8492-9994</Text>
                 </View>
             </View>
-            <TouchableOpacity style={styleLocal.backBtn}>
+            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.backBtn}>
                 <Text style={styleLocal.backText}>Try Again</Text>
             </TouchableOpacity>
       </View>
@@ -77,7 +80,7 @@ const TransferFailed = () => {
 
 const styleLocal = StyleSheet.create({
     header: {
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         paddingVertical: 45,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 25,
@@ -86,7 +89,7 @@ const styleLocal = StyleSheet.create({
     suhi: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: SECONDARY_COLOR,
         height: 100,
         borderRadius: 20,
         paddingLeft: 25,
@@ -95,7 +98,7 @@ const styleLocal = StyleSheet.create({
     ceklis: {
         marginVertical: 45,
         alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: MINUS_AMOUNT,
         marginHorizontal: 156,
         borderRadius: 100,
         height: 100,
@@ -127,7 +130,7 @@ const styleLocal = StyleSheet.create({
         marginRight: 10,
     },
     mainGroup: {
-        backgroundColor: 'white',
+        backgroundColor: SECONDARY_COLOR,
         elevation: 2,
         width: 170,
         height: 80,
@@ -150,7 +153,7 @@ const styleLocal = StyleSheet.create({
         marginTop: 25,
     },
     notesGroup: {
-        backgroundColor: 'white',
+        backgroundColor: SECONDARY_COLOR,
         elevation: 2,
         paddingLeft: 15,
         height: 80,
@@ -158,7 +161,7 @@ const styleLocal = StyleSheet.create({
     },
     backBtn: {
         marginVertical: 80,
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         height: 60,
         borderRadius: 20,
     },

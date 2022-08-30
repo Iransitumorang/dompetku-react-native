@@ -1,9 +1,12 @@
 /* eslint-disable prettier/prettier */
 import {Dimensions, StyleSheet} from 'react-native';
+import {PRIMARY_COLOR} from './constant';
+import {SECONDARY_COLOR} from './constant';
 
 const styles = StyleSheet.create({
     wrapper: {
-        backgroundColor: '#CA955C',
+        // backgroundColor: '#CA955C',
+        backgroundColor: PRIMARY_COLOR,
     },
     header: {
         height: Dimensions.get('screen').height / 4,
@@ -19,7 +22,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 45,
         borderTopRightRadius: 45,
         flex: 1,
-        backgroundColor: '#EDDFB3',
+        backgroundColor: SECONDARY_COLOR,
     },
     content: {
         flex: 1,

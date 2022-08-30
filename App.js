@@ -24,16 +24,19 @@ import TransferSuccess from './src/screens/TransferSuccess';
 import TransferFailed from './src/screens/TransferFailed';
 import TopUp from './src/screens/TopUp';
 import Profile from './src/screens/Profile';
+import PersonalInfo from './src/screens/PersonalInfo';
 import ChangePassword from './src/screens/ChangePassword';
 import ChangePin from './src/screens/ChangePin';
 import AddNumberPhone from './src/screens/AddNumberPhone';
 import ManageNumber from './src/screens/ManageNumber';
 import Notification from './src/screens/Notification';
+import Payment from './src/screens/Payment';
 
 const App = () => {
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}} >
+        <Stack.Navigator screenOptions={{headerShown: false}} >
+        {/* <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}} > */}
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="PinSuccess" component={PinSuccess} />
@@ -51,11 +54,13 @@ const App = () => {
           <Stack.Screen name="TransferFailed" component={TransferFailed} />
           <Stack.Screen name="TopUp" component={TopUp} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="PersonalInfo" component={PersonalInfo} />
           <Stack.Screen name="ChangePassword" component={ChangePassword} />
           <Stack.Screen name="ChangePin" component={ChangePin} />
           <Stack.Screen name="AddNumberPhone" component={AddNumberPhone} />
           <Stack.Screen name="ManageNumber" component={ManageNumber} />
           <Stack.Screen name="Notification" component={Notification} />
+          <Stack.Screen name="Payment" component={Payment} />
         </Stack.Navigator>
       </NavigationContainer>
   );

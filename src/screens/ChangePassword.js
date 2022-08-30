@@ -6,8 +6,9 @@ import React from 'react';
 import styles from '../styles/globals';
 import Input from '../components/Input';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { PRIMARY_COLOR } from '../styles/constant';
 
-const ChangePassword = () => {
+const ChangePassword = ({ navigation }) => {
   const [current, setCurrent] = React.useState('');
   const [newPass, steNewPass] = React.useState('');
   const [repeat, setRepeat] = React.useState('');
@@ -21,7 +22,7 @@ const ChangePassword = () => {
   return (
     <ScrollView>
         <View style={styleLocal.header}>
-            <Icon name="arrow-left" size={20} color="black" />
+            <Icon onPress={() => navigation.goBack()} name="arrow-left" size={20} color="black" />
             <Text style={styleLocal.headerFont}>Change Password</Text>
         </View>
         <View>
@@ -51,7 +52,7 @@ const styleLocal = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingLeft: 20,
-        backgroundColor: '#CA955C',
+        backgroundColor: PRIMARY_COLOR,
         paddingVertical: 45,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,

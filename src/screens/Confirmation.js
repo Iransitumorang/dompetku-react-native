@@ -6,14 +6,16 @@
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { PRIMARY_COLOR } from '../styles/constant';
+import { SECONDARY_COLOR } from '../styles/constant';
 
-const Confirmation = () => {
+const Confirmation = ({ navigation }) => {
   return (
     <ScrollView>
         <View style={styleLocal.header}>
             <View style={styleLocal.headerTrans}>
-                <Icon style={styleLocal.transIcon} name="arrowleft" size={30} color="black" />
-                <Text style={styleLocal.transText}>Transfer</Text>
+                <Icon onPress={() => navigation.goBack()} style={styleLocal.transIcon} name="arrowleft" size={30} color="black" />
+                <Text style={styleLocal.transText}>Confirmation</Text>
             </View>
             <View style={styleLocal.suhi}>
                 <Image
@@ -52,9 +54,12 @@ const Confirmation = () => {
                 <Text style={styleLocal.titleMain}>Notes</Text>
                 <Text style={styleLocal.amountMain}>For buying some socks</Text>
             </View>
-            <TouchableOpacity style={styleLocal.continueBtn}>
+            <TouchableOpacity onPress={() => navigation.navigate('TransferSuccess')} style={styleLocal.continueBtn}>
                 <Text style={styleLocal.continueText}>Continue</Text>
             </TouchableOpacity>
+            {/* <TouchableOpacity onPress={() => navigation.navigate('TransferFailed')} style={styleLocal.continueBtn}>
+                <Text style={styleLocal.continueText}>Transfer Failed</Text>
+            </TouchableOpacity> */}
       </View>
     </ScrollView>
   );
@@ -62,7 +67,7 @@ const Confirmation = () => {
 
 const styleLocal = StyleSheet.create({
     header: {
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         paddingVertical: 45,
         paddingHorizontal: 20,
         borderBottomLeftRadius: 25,
@@ -71,7 +76,7 @@ const styleLocal = StyleSheet.create({
     suhi: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: SECONDARY_COLOR,
         height: 100,
         borderRadius: 20,
         paddingLeft: 25,
@@ -98,7 +103,7 @@ const styleLocal = StyleSheet.create({
         marginRight: 10,
     },
     mainGroup: {
-        backgroundColor: 'white',
+        backgroundColor: SECONDARY_COLOR,
         elevation: 2,
         width: 170,
         height: 80,
@@ -115,15 +120,16 @@ const styleLocal = StyleSheet.create({
         fontWeight: '700',
     },
     notesGroup: {
-        backgroundColor: 'white',
+        backgroundColor: SECONDARY_COLOR,
         elevation: 2,
         paddingLeft: 15,
         height: 80,
         borderRadius: 15,
     },
     continueBtn: {
-        marginVertical: 80,
-        backgroundColor: 'skyblue',
+        marginTop: 80,
+        marginBottom: 40,
+        backgroundColor: PRIMARY_COLOR,
         height: 60,
         borderRadius: 20,
     },

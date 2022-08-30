@@ -5,14 +5,15 @@ import {View, Text, ScrollView, StyleSheet, Image, TouchableOpacity, Switch} fro
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import Icon2 from 'react-native-vector-icons/AntDesign';
+import { SECONDARY_COLOR } from '../styles/constant';
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <ScrollView>
         <TouchableOpacity>
-        <Icon2 style={styleLocal.arrowLeft} name="arrowleft" size={35} color={'#4D4B57'} />
+        <Icon2 onPress={() => navigation.goBack()} style={styleLocal.arrowLeft} name="arrowleft" size={35} color={'#4D4B57'} />
         </TouchableOpacity>
       <View style={styleLocal.header}>
             <Image
@@ -26,28 +27,27 @@ const Profile = () => {
             <Text style={styleLocal.robert}>Robert Chandler</Text>
             <Text style={styleLocal.edit}>+62 813-9387-7946</Text>
       </View>
-      <TouchableOpacity style={{marginHorizontal: 25, marginTop: 35}}>
+      <TouchableOpacity style={styleLocal.mainPart} onPress={() => navigation.navigate('PersonalInfo')}>
             <View style={styleLocal.mainGroup}>
                 <Text style={styleLocal.mainText}>Personal Information</Text>
                 <Icon2 style={styleLocal.arrowRight} name="arrowright" size={20} color={'#4D4B57'} />
             </View>
       </TouchableOpacity>
-      <TouchableOpacity style={{marginHorizontal: 25, marginTop: 35}}>
+      <TouchableOpacity style={styleLocal.mainPart} onPress={() => navigation.navigate('ChangePassword')}>
             <View style={styleLocal.mainGroup}>
                 <Text style={styleLocal.mainText}>Change Password</Text>
                 <Icon2 style={styleLocal.arrowRight} name="arrowright" size={20} color={'#4D4B57'} />
             </View>
       </TouchableOpacity>
-      <TouchableOpacity style={{marginHorizontal: 25, marginTop: 35}}>
+      <TouchableOpacity style={styleLocal.mainPart} onPress={() => navigation.navigate('ChangePin')}>
             <View style={styleLocal.mainGroup}>
                 <Text style={styleLocal.mainText}>Change PIN</Text>
                 <Icon2 style={styleLocal.arrowRight} name="arrowright" size={20} color={'#4D4B57'} />
             </View>
       </TouchableOpacity>
-      <TouchableOpacity style={{marginHorizontal: 25, marginTop: 35}}>
+      <TouchableOpacity style={styleLocal.mainPart}>
             <View style={styleLocal.mainGroup}>
                 <Text style={styleLocal.mainText}>Notification</Text>
-                {/* <Switch value={this.state.value} /> */}
                 <Switch
                     trackColor={{ false: '#767577', true: '#81b0ff' }}
                     thumbColor={isEnabled ? 'blue' : 'grey'}
@@ -56,7 +56,7 @@ const Profile = () => {
                 />
             </View>
       </TouchableOpacity>
-      <TouchableOpacity style={{marginHorizontal: 25, marginTop: 35}}>
+      <TouchableOpacity style={styleLocal.mainPart} onPress={() => navigation.navigate('Login')}>
             <View style={styleLocal.mainGroup}>
                 <Text style={styleLocal.mainText}>Logout</Text>
             </View>
@@ -76,12 +76,16 @@ const styleLocal = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    mainPart: {
+        marginHorizontal: 25,
+        marginTop: 35,
+    },
     mainGroup: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 20,
-        backgroundColor: 'skyblue',
+        backgroundColor: SECONDARY_COLOR,
         height: 50,
         borderRadius: 10,
     },

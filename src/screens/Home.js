@@ -7,35 +7,45 @@ import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image } from 'rea
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/AntDesign';
+import { PRIMARY_COLOR } from '../styles/constant';
+import { SECONDARY_COLOR } from '../styles/constant';
+import { MINUS_AMOUNT } from '../styles/constant';
+import { PLUS_AMOUNT } from '../styles/constant';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <ScrollView style={styleLocal.wrapper}>
         <View style={styleLocal.header}>
             <View style={styleLocal.leftHeader}>
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                 <Image
                 source={require('../assets/images/robert.png')} style={{width: 62, height: 62, marginRight: 20}}
                 />
+            </TouchableOpacity>
                 <View>
                     <Text style={styleLocal.balance}>Balance</Text>
-                    <Text style={styleLocal.headerAmount}>Rp120.000</Text>
+                    <Text style={styleLocal.headerAmount}>Rp 120.000</Text>
                 </View>
             </View>
-            <Icon style={styleLocal.belIcons} name="notifications-outline" size={37} color="black" />
+            <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
+                <Icon style={styleLocal.belIcons} name="notifications-outline" size={37} color={MINUS_AMOUNT} />
+            </TouchableOpacity>
         </View>
         <View style={styleLocal.transaction}>
-            <TouchableOpacity style={styleLocal.transfer} >
-                <Icon style={styleLocal.chooseTrans} name="arrow-up" size={30} color="black" />
+            <TouchableOpacity style={styleLocal.transfer} onPress={() => navigation.navigate('Receiver')}>
+                <Icon style={styleLocal.chooseTrans} name="arrow-up" size={30} color={PRIMARY_COLOR} />
                 <Text style={styleLocal.topup}>Transfer</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styleLocal.transfer} >
-                <Icon2 style={styleLocal.chooseTrans} name="plus" size={30} color="black" />
+            <TouchableOpacity style={styleLocal.transfer} onPress={() => navigation.navigate('TopUp')}>
+                <Icon2 style={styleLocal.chooseTrans} name="plus" size={30} color={PRIMARY_COLOR} />
                 <Text style={styleLocal.topup}>Top Up</Text>
             </TouchableOpacity>
         </View>
         <View style={styleLocal.mainTop}>
             <Text style={styleLocal.amount}>Transaction History</Text>
-            <Text style={styleLocal.seeall}>See all</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('TransactionDetail')}>
+                <Text style={styleLocal.seeall}>See all</Text>
+            </TouchableOpacity>
         </View>
         <View>
             <View style={styleLocal.userTrans}>
@@ -103,7 +113,7 @@ const styleLocal = StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'skyblue',
+        backgroundColor: PRIMARY_COLOR,
         paddingVertical: 35,
         justifyContent: 'space-between',
         paddingHorizontal: 25,
@@ -131,7 +141,7 @@ const styleLocal = StyleSheet.create({
     transfer: {
         flexDirection: 'row',
         marginRight: 15,
-        backgroundColor: 'skyblue',
+        backgroundColor: SECONDARY_COLOR,
         width: 170,
         height: 60,
         alignItems: 'center',
@@ -156,7 +166,7 @@ const styleLocal = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 15,
         marginBottom: 15,
-        backgroundColor: 'skyblue',
+        backgroundColor: SECONDARY_COLOR,
         alignItems: 'center',
         elevation: 3,
     },
@@ -170,15 +180,16 @@ const styleLocal = StyleSheet.create({
         fontWeight: '700',
     },
     minusAmount: {
-        color: 'red',
+        color: MINUS_AMOUNT,
     },
     plusAmount: {
-        color: 'green',
+        color: PLUS_AMOUNT,
     },
     seeall: {
         fontSize: 20,
         color: 'red',
         alignItems: 'center',
+        borderBottomWidth: 1,
     },
     desc: {
         marginTop: 8,

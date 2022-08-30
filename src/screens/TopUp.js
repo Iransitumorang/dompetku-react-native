@@ -4,13 +4,15 @@
 import {View, Text, ScrollView, StyleSheet} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { PRIMARY_COLOR } from '../styles/constant';
+import { SECONDARY_COLOR } from '../styles/constant';
 
-const TopUp = () => {
+const TopUp = ({navigation}) => {
   return (
     <ScrollView>
       <View style={styleLocal.header}>
         <View style={styleLocal.headerTrans}>
-          <Icon
+          <Icon onPress={() => navigation.goBack()}
             style={styleLocal.transIcon}
             name="arrowleft"
             size={30}
@@ -20,7 +22,7 @@ const TopUp = () => {
         </View>
         <View style={styleLocal.headerAct}>
           <View style={styleLocal.iconPlusView}>
-            <Icon
+            <Icon onPress={() => navigation.navigate('Payment')}
               style={styleLocal.iconplus}
               name="plus"
               size={40}
@@ -74,7 +76,7 @@ const TopUp = () => {
 
 const styleLocal = StyleSheet.create({
   header: {
-    backgroundColor: 'skyblue',
+    backgroundColor: PRIMARY_COLOR,
     paddingVertical: 45,
     paddingHorizontal: 20,
     borderBottomLeftRadius: 25,
@@ -83,7 +85,7 @@ const styleLocal = StyleSheet.create({
   headerAct: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: SECONDARY_COLOR,
     height: 100,
     borderRadius: 20,
     paddingLeft: 25,
@@ -95,7 +97,7 @@ const styleLocal = StyleSheet.create({
     marginBottom: 25,
   },
   iconPlusView: {
-    backgroundColor: '#EBEEF2',
+    backgroundColor: PRIMARY_COLOR,
     width: 50,
     height: 50,
     borderRadius: 10,
@@ -131,7 +133,7 @@ const styleLocal = StyleSheet.create({
     marginRight: 20,
     alignItems: 'center',
     marginBottom: 25,
-    backgroundColor: 'white',
+    backgroundColor: SECONDARY_COLOR,
     borderRadius: 15,
     height: 75,
     paddingLeft: 15,
@@ -143,11 +145,10 @@ const styleLocal = StyleSheet.create({
     marginRight: 15,
   },
   description: {
-    fontWeight: '400',
     fontSize: 16,
     lineHeight: 27,
-    background: '#7A7886',
     paddingRight: 25,
+    fontWeight: 'bold',
   },
 });
 
