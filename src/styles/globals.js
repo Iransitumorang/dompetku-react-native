@@ -2,6 +2,7 @@
 import {Dimensions, StyleSheet} from 'react-native';
 import {PRIMARY_COLOR} from './constant';
 import {SECONDARY_COLOR} from './constant';
+import {THIRD_COLOR} from './constant';
 
 const styles = StyleSheet.create({
     wrapper: {
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         marginBottom: 50,
     },
     buttonLogin: {
-        backgroundColor: '#CA955C',
+        backgroundColor: PRIMARY_COLOR,
         // width: Dimensions.get('screen').width / 2,
         marginHorizontal: 10,
         marginVertical: 30,
@@ -58,8 +59,7 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         marginHorizontal: 18,
         fontSize: 16,
-        color: '#61481C',
-        borderBottomColor: '#61481C',
+        color: THIRD_COLOR,
     },
     haveAccount: {
         textAlign: 'center',

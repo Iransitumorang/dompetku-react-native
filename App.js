@@ -31,12 +31,14 @@ import AddNumberPhone from './src/screens/AddNumberPhone';
 import ManageNumber from './src/screens/ManageNumber';
 import Notification from './src/screens/Notification';
 import Payment from './src/screens/Payment';
+import Test from './src/screens/fakeapi/Test';
+import ApiVanilla from './src/screens/fakeapi/ApiVanilla';
 
 const App = () => {
   return (
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}} >
-        {/* <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}} > */}
+        {/* <Stack.Navigator initialRouteName="Receiver" screenOptions={{headerShown: false}} > */}
+        <Stack.Navigator initialRouteName="Receiver" screenOptions={{headerShown: false}} >
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="PinSuccess" component={PinSuccess} />
@@ -61,6 +63,8 @@ const App = () => {
           <Stack.Screen name="ManageNumber" component={ManageNumber} />
           <Stack.Screen name="Notification" component={Notification} />
           <Stack.Screen name="Payment" component={Payment} />
+          <Stack.Screen name="Test" component={Test} />
+          <Stack.Screen name="ApiVanilla" component={ApiVanilla} />
         </Stack.Navigator>
       </NavigationContainer>
   );
