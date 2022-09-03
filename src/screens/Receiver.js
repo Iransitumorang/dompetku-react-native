@@ -17,8 +17,18 @@ import {PRIMARY_COLOR} from '../styles/constant';
 import {SECONDARY_COLOR} from '../styles/constant';
 
 const Receiver = ({navigation}) => {
-    const [data, setData] = useState([]);
-    const [refreshing, setRefreshing] = useState(false);
+  const [data, setData] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+
+  // const [text, setText] = useState('')
+
+  // const handleSearchInput = (text) => {
+  //   if(!text){
+  //     setText('')
+  //   } else {
+  //     setText(text)
+  //   }
+  // }
 
   useEffect(() => {
     getData();
@@ -37,11 +47,10 @@ const Receiver = ({navigation}) => {
       });
   };
   return (
-    <View refreshControl={
-        <RefreshControl
-          refreshing={refreshing}
-          onRefresh={getData}/>
-          }>
+    <View
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={getData} />
+      }>
       <View style={styleLocal.header}>
         <View style={styleLocal.headerTrans}>
           <Icon
@@ -64,30 +73,36 @@ const Receiver = ({navigation}) => {
             style={{height: 50, fontSize: 22}}
             placeholderStyle={{color: 'red', fontSize: 18}}
             placeholder="Search receiver here"
+            // handleSearchInput={handleSearchInput}
           />
         </View>
       </View>
+
       <View style={styleLocal.transaction}>
         <Text style={styleLocal.contacts}>Contacts</Text>
         <Text style={styleLocal.founds}>17 Contact Founds</Text>
       </View>
       <FlatList
-            style={{marginBottom: 50}}
-            data={data}
-            // onEndReached={() => getData()} // ini untuk infinite scroll
-            onEndReachedThreshold={10} // ini untuk batas maksimal
-            renderItem={({item}) => (
-            <TouchableOpacity onPress={() => navigation.navigate('AmountInput')} style={styleLocal.userTrans}>
-                <View style={styleLocal.imgName}>
-                    <Image source={{uri: item.avatar}} style={{width: 80, height: 80, marginRight: 20}} />
-                    <View style={styleLocal.username}>
-                        <Text style={styleLocal.amount}>{item.title}</Text>
-                        <Text style={styleLocal.desc}>{item.author}</Text>
-                    </View>
-                </View>
-            </TouchableOpacity>
-
-      )}
+        style={{marginBottom: 50}}
+        data={data}
+        // onEndReached={() => getData()} // ini untuk infinite scroll
+        // onEndReachedThreshold={10} // ini untuk batas maksimal
+        renderItem={({item}) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AmountInput')}
+            style={styleLocal.userTrans}>
+            <View style={styleLocal.imgName}>
+              <Image
+                source={{uri: item.avatar}}
+                style={{width: 80, height: 80, marginRight: 20}}
+              />
+              <View style={styleLocal.username}>
+                <Text style={styleLocal.amount}>{item.title}</Text>
+                <Text style={styleLocal.desc}>{item.author}</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        )}
       />
     </View>
   );

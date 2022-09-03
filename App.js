@@ -37,8 +37,8 @@ import ApiVanilla from './src/screens/fakeapi/ApiVanilla';
 const App = () => {
   return (
       <NavigationContainer>
-        {/* <Stack.Navigator initialRouteName="Receiver" screenOptions={{headerShown: false}} > */}
         <Stack.Navigator initialRouteName="Receiver" screenOptions={{headerShown: false}} >
+        {/* <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}} > */}
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="PinSuccess" component={PinSuccess} />

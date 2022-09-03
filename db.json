@@ -2,7 +2,7 @@
   "posts": [
     { "id": 1, "title": "Samuel Suhi ", "author": "+62 813-8492-9994", "avatar": "https://reqres.in/img/faces/8-image.jpg" },
     { "id": 2, "title": "Julia Syen", "author": "+62 813-8492-4564", "avatar": "https://reqres.in/img/faces/7-image.jpg"},
-    { "id": 3, "title": "Bobi Sammy ", "author": "+62 813-5982-2940", "avatar": "https://reqres.in/img/faces/9-image.jpg" },
+    { "id": 3, "title": "Bobi Sammy", "author": "+62 813-5982-2940", "avatar": "https://reqres.in/img/faces/9-image.jpg" },
     { "id": 4, "title": "Juliana Rich", "author": "+62 811-6212-5663", "avatar": "https://reqres.in/img/faces/10-image.jpg"},
     { "id": 5, "title": "Michi Mei ", "author": "+62 813-3891-3838", "avatar": "https://reqres.in/img/faces/11-image.jpg" },
     { "id": 6, "title": "Dody Besari", "author": "+62 0812-4334-3561", "avatar": "https://reqres.in/img/faces/12-image.jpg"},
