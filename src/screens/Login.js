@@ -13,7 +13,7 @@ const Login = ({ navigation }) => {
         <View style={styles.header}>
             <Image
               source={require('../assets/images/dompetku2.png')} style={{width: 300, height: 55}}
-                    />
+             />
         </View>
         <View style={styles.article}>
           <View  style={styles.content}>

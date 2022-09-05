@@ -33,12 +33,14 @@ import Notification from './src/screens/Notification';
 import Payment from './src/screens/Payment';
 import Test from './src/screens/fakeapi/Test';
 import ApiVanilla from './src/screens/fakeapi/ApiVanilla';
+import SplashScreen from './src/screens/SplashScreen';
 
 const App = () => {
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Receiver" screenOptions={{headerShown: false}} >
+        <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{headerShown: false}} >
         {/* <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}} > */}
+          <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="PinSuccess" component={PinSuccess} />

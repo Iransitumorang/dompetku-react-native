@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  TextInput,
 } from 'react-native';
 import React from 'react';
 import styles from '../styles/globals';
@@ -24,7 +25,44 @@ const ChangePin = ({navigation}) => {
           Enter your current 6 digits Zwallet PIN below to continue to the next steps.
           </Text>
         </View>
-
+        <View style={styleLocal.inputGroup}>
+        <TextInput
+        style={styleLocal.input}
+        // onChangeText={onChangeNumber}
+        // value={number}
+        keyboardType="numeric"
+      />
+        <TextInput
+        style={styleLocal.input}
+        // onChangeText={onChangeNumber}
+        // value={number}
+        keyboardType="numeric"
+      />
+        <TextInput
+        style={styleLocal.input}
+        // onChangeText={onChangeNumber}
+        // value={number}
+        keyboardType="numeric"
+      />
+        <TextInput
+        style={styleLocal.input}
+        // onChangeText={onChangeNumber}
+        // value={number}
+        keyboardType="numeric"
+      />
+        <TextInput
+        style={styleLocal.input}
+        // onChangeText={onChangeNumber}
+        // value={number}
+        keyboardType="numeric"
+      />
+        <TextInput
+        style={styleLocal.input}
+        // onChangeText={onChangeNumber}
+        // value={number}
+        keyboardType="numeric"
+      />
+    </View>
         <TouchableOpacity style={styles.buttonLogin}>
           <Text style={styles.btnLoginText}>Continue</Text>
         </TouchableOpacity>
@@ -67,6 +105,20 @@ const styleLocal = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     marginHorizontal: 5,
+  },
+  input: {
+    borderBottomColor: 'black',
+    width: 45,
+    height: 60,
+    borderWidth: 1,
+    marginHorizontal: 9,
+    fontSize: 35,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  inputGroup: {
+    flexDirection: 'row',
+    marginHorizontal: 10,
   },
 });
 
