@@ -34,9 +34,12 @@ import Payment from './src/screens/Payment';
 import Test from './src/screens/fakeapi/Test';
 import ApiVanilla from './src/screens/fakeapi/ApiVanilla';
 import SplashScreen from './src/screens/SplashScreen';
+import { Provider } from 'react-redux';
+import {store, persistor} from './src/redux/store';
 
 const App = () => {
   return (
+    <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{headerShown: false}} >
         {/* <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}} > */}
@@ -69,6 +72,8 @@ const App = () => {
           <Stack.Screen name="ApiVanilla" component={ApiVanilla} />
         </Stack.Navigator>
       </NavigationContainer>
+    </Provider>
+
   );
 };
 
